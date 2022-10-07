@@ -39,8 +39,13 @@ switch(empCheck)
    
 }
 }
-let empHrs1=0;
-let empWage1=0;
-empHrs1=getWorkinghours(empCheck);
-empWage1=empHrs*WAGE_PER_HR;
-console.log("Emp Wage : "+empWage1);
+//UC 4: Calculate wage for a month
+var empHrs1=0;
+const TOTAL_WORKING_DAYS = 20;
+var empWage1=0;
+for(let day = 0;day<TOTAL_WORKING_DAYS;day++){
+    empCheck=Math.floor(Math.random()*10)%3;
+    empHrs1+=getWorkinghours(empCheck);
+}
+empWage1=empHrs1*WAGE_PER_HR;
+console.log("Total Emp Hrs :"+empHrs1+" Total Emp Wage : "+empWage1);
